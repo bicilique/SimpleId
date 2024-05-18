@@ -1,0 +1,8 @@
+=============== May 18, 2024 (WIB) ===============
+09:44:27.390036 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+09:44:27.469904 db@open opening
+09:44:27.471438 version@stat F·[] S·0B[] Sc·[]
+09:44:27.491491 db@janitor F·2 G·0
+09:44:27.491598 db@open done T·21.639664ms
+09:44:30.447930 db@close closing
+09:44:30.448111 db@close done T·181.031µs

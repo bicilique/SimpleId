@@ -1,0 +1,41 @@
+Create node
+    geth --datadir sealer1/ account new
+    geth --datadir sealer2/ account new
+    geth --datadir sealer3/ account new
+    geth --datadir node1/ account new
+    geth --datadir node2/ account new
+    geth --datadir node3/ account new
+
+Initiate node
+    geth --datadir sealer1/ init genesis.json
+    geth --datadir sealer2/ init genesis.json
+    geth --datadir sealer3/ init genesis.json
+    geth --datadir node1/ init genesis.json
+    geth --datadir node2/ init genesis.json
+    geth --datadir node3/ init genesis.json
+
+
+Run Bootnode ->
+    bootnode -nodekey boot.key -verbosity 9 -addr :30310
+
+Run sealer1 -> port : 30311 , rpc port : 8551
+    geth --datadir sealer1 --syncmode 'full' --port 30311 --http.addr 'localhost' --authrpc.port 8551 --http.api 'personal,db,eth,net,web3,txpool,miner' --bootnodes enode://91049a4bf5a1d943c8aad3b4d487ef69ef58f4bbe8dbcbdf80f6ce90de2503cb613af72ec8ebb8cc05316202666f823d56d0af681b3411aa54f5d698bf6dbf63@127.0.0.1:30310 --networkid 2024 --miner.gasprice 1  --unlock '0x9374f2De64bDa340f85a5c38a708A2A42889375F' --password sealer1/password.txt --mine --miner.etherbase 0x9374f2De64bDa340f85a5c38a708A2A42889375F
+
+Run sealer2 -> port : 30312 , rpc port : 8552
+    geth --datadir sealer2 --syncmode 'full' --port 30312 --http.addr 'localhost' --authrpc.port 8552 --http.api 'personal,db,eth,net,web3,txpool,miner' --bootnodes enode://91049a4bf5a1d943c8aad3b4d487ef69ef58f4bbe8dbcbdf80f6ce90de2503cb613af72ec8ebb8cc05316202666f823d56d0af681b3411aa54f5d698bf6dbf63@127.0.0.1:30310 --networkid 2024 --miner.gasprice 1  --unlock '0xa592b54d0a7E28D1508A05ca58f167C950e54607' --password sealer2/password.txt --mine --miner.etherbase 0xa592b54d0a7E28D1508A05ca58f167C950e54607
+
+Run sealer3 -> port : 30313 , rpc port : 8553
+    geth --datadir sealer3 --syncmode 'full' --port 30313 --http.addr 'localhost' --authrpc.port 8553 --http.api 'personal,db,eth,net,web3,txpool,miner' --bootnodes enode://91049a4bf5a1d943c8aad3b4d487ef69ef58f4bbe8dbcbdf80f6ce90de2503cb613af72ec8ebb8cc05316202666f823d56d0af681b3411aa54f5d698bf6dbf63@127.0.0.1:30310 --networkid 2024 --miner.gasprice 1  --unlock '0xc93eB278dd90C9D258f78e962cB4F11f8c3851Fb' --password sealer3/password.txt --mine --miner.etherbase 0xc93eB278dd90C9D258f78e962cB4F11f8c3851Fb
+
+Run node1 -> port : 30321 , rpc port : 8561 , http port 8541
+    geth --datadir node1 --syncmode 'full' --http.port 8541 --port 30321 --http.addr '127.0.0.1' --authrpc.addr '127.0.0.1' --authrpc.port 8561 --http --http.api 'eth,net,web3,personal,miner' --bootnodes enode://91049a4bf5a1d943c8aad3b4d487ef69ef58f4bbe8dbcbdf80f6ce90de2503cb613af72ec8ebb8cc05316202666f823d56d0af681b3411aa54f5d698bf6dbf63@127.0.0.1:30310 --networkid 2024 --miner.gasprice 1  --unlock '0x70c726B420AC92095fa73B4ab298bC2fFF7d9B0d' --password node1/password.txt --allow-insecure-unlock
+
+Run node2 -> port : 30322 , rpc port : 8562 , http port 8542
+    geth --datadir node2 --syncmode 'full' --http.port 8542 --port 30322 --http.addr '127.0.0.1' --authrpc.addr '127.0.0.1' --authrpc.port 8562 --http --http.api 'eth,net,web3,personal,miner' --bootnodes enode://91049a4bf5a1d943c8aad3b4d487ef69ef58f4bbe8dbcbdf80f6ce90de2503cb613af72ec8ebb8cc05316202666f823d56d0af681b3411aa54f5d698bf6dbf63@127.0.0.1:30310 --networkid 2024 --miner.gasprice 1  --unlock '0x0E98f547266BfdeF8aFA67BA15d5fc0700F6988c' --password node2/password.txt --allow-insecure-unlock
+
+Run node3 -> port : 30323 , rpc port : 8563 , http port 8543
+    geth --datadir node3 --syncmode 'full' --http.port 8543 --port 30323 --http.addr '127.0.0.1' --authrpc.addr '127.0.0.1' --authrpc.port 8563 --http --http.api 'eth,net,web3,personal,miner' --bootnodes enode://91049a4bf5a1d943c8aad3b4d487ef69ef58f4bbe8dbcbdf80f6ce90de2503cb613af72ec8ebb8cc05316202666f823d56d0af681b3411aa54f5d698bf6dbf63@127.0.0.1:30310 --networkid 2024 --miner.gasprice 1  --unlock '0x8FA352A1E7e13F6d6c9486Dc85E6aD29d8A65b8f' --password node3/password.txt --allow-insecure-unlock
+
+
+
+

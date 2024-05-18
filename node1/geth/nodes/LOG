@@ -1,0 +1,32 @@
+=============== May 18, 2024 (WIB) ===============
+09:41:12.940749 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+09:41:13.001716 db@open opening
+09:41:13.002932 version@stat F·[] S·0B[] Sc·[]
+09:41:13.042009 db@janitor F·2 G·0
+09:41:13.042071 db@open done T·40.302844ms
+09:41:36.578362 db@close closing
+09:41:36.578880 db@close done T·517.238µs
+=============== May 18, 2024 (WIB) ===============
+09:42:25.137236 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+09:42:25.137685 version@stat F·[] S·0B[] Sc·[]
+09:42:25.137739 db@open opening
+09:42:25.137890 journal@recovery F·1
+09:42:25.138385 journal@recovery recovering @1
+09:42:25.158938 memdb@flush created L0@2 N·32 S·483B "loc..seq,v19":"version,v1"
+09:42:25.162487 version@stat F·[1] S·483B[483B] Sc·[0.25]
+09:42:25.245581 db@janitor F·3 G·0
+09:42:25.245727 db@open done T·107.963443ms
+09:42:36.653415 db@close closing
+09:42:36.653644 db@close done T·234.796µs
+=============== May 18, 2024 (WIB) ===============
+09:43:22.925647 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+09:43:22.925962 version@stat F·[1] S·483B[483B] Sc·[0.25]
+09:43:22.925996 db@open opening
+09:43:22.926084 journal@recovery F·1
+09:43:22.926596 journal@recovery recovering @3
+09:43:22.946815 memdb@flush created L0@5 N·16 S·363B "loc..seq,v47":"n:3..ong,v44"
+09:43:22.950200 version@stat F·[2] S·846B[846B] Sc·[0.50]
+09:43:23.032319 db@janitor F·4 G·0
+09:43:23.032388 db@open done T·106.38087ms
+09:43:27.419754 db@close closing
+09:43:27.420143 db@close done T·385.012µs
