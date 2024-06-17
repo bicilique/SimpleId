@@ -1,0 +1,109 @@
+// package services
+
+// import (
+// 	"SimpleId/model"
+// 	"SimpleId/repository"
+// 	"time"
+// )
+
+// type UserRepository interface {
+// 	ShowAllUser() ([]model.User, error)
+// 	CreateUser(userRequest model.CreateUserRequest) (model.User, error)
+// 	GetUserById(id int) (model.User, error)
+// 	GetUserByUsername(username string) (model.User, error)
+// 	UpdateUser(id int, userInput model.User) (model.User, error)
+// }
+
+// type userRepository struct {
+// 	repo repository.Repository[model.User]
+// }
+
+// func NewUserRepository(repo repository.Repository[model.User]) *userRepository {
+// 	return &userRepository{repo: repo}
+// }
+
+// func (u *userRepository) ShowAllUser() ([]model.User, error) {
+// 	users, err := u.repo.SelectAll()
+// 	if err != nil {
+// 		return nil, err
+// 	}
+// 	return users, nil
+// }
+
+// func (u *userRepository) CreateUser(userRequest model.CreateUserRequest) (model.User, error) {
+// 	user := model.User{}
+// 	user.NIK = userRequest.NIK
+// 	user.Name = userRequest.Name
+// 	user.Username = userRequest.Username
+// 	// user.Password = userRequest.Password
+// 	user.Status = "WAITING_ON_PROCESS"
+// 	user.Password, _ = hashAndEncodePassword(userRequest.Password)
+// 	newUser, err := u.repo.Insert(user)
+// 	if err != nil {
+// 		return newUser, err
+// 	}
+// 	return newUser, nil
+// }
+
+// func (u *userRepository) GetUserById(id string) (model.User, error) {
+// 	user, err := u.repo.SelectById(id)
+// 	if err != nil {
+// 		return user, err
+// 	}
+// 	return user, nil
+// }
+
+// func (u *userRepository) GetUserByUsername(username string) (model.User, error) {
+// 	user, err := u.repo.SelectByName("username", username)
+// 	if err != nil {
+// 		return user, err
+// 	}
+// 	return user, nil
+// }
+
+// func (u *userRepository) UpdateUser(id string, userInput model.User) (model.User, error) {
+// 	// Retrieve the existing user by ID
+// 	existingUser, err := u.GetUserById(id)
+// 	if err != nil {
+// 		return existingUser, err
+// 	}
+
+// 	// Prepare updates
+// 	updates := make(map[string]interface{})
+
+// 	if userInput.NIK != "" {
+// 		updates["nik"] = userInput.NIK
+// 	}
+// 	if userInput.Name != "" {
+// 		updates["name"] = userInput.Name
+// 	}
+// 	if userInput.Username != "" {
+// 		updates["username"] = userInput.Username
+// 	}
+// 	if userInput.Password != "" {
+// 		// Hash the password before saving
+// 		hashedPassword, err := hashAndEncodePassword(userInput.Password)
+// 		if err != nil {
+// 			return existingUser, err
+// 		}
+// 		updates["password"] = hashedPassword
+// 	}
+// 	if userInput.ContractAddress != "" {
+// 		updates["contract_address"] = userInput.ContractAddress
+// 	}
+// 	if userInput.Secret != "" {
+// 		updates["secret"] = userInput.Secret
+// 	}
+// 	if userInput.Status != "" {
+// 		updates["status"] = userInput.Status
+// 	}
+// 	updates["updated_at"] = time.Now()
+
+// 	updatedUser, err := u.repo.UpdateById(id, updates)
+// 	if err != nil {
+// 		return existingUser, err
+// 	}
+
+// 	// Return the updated user
+// 	return updatedUser, nil
+// }

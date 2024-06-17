@@ -9,7 +9,7 @@ Create node
 Initiate node
     geth --datadir sealer1/ init genesis.json
     geth --datadir sealer2/ init genesis.json
-    geth --datadir sealer3/ init genesis.json
+    geth --datadir sealer3/ init genesis.jsonge
     geth --datadir node1/ init genesis.json
     geth --datadir node2/ init genesis.json
     geth --datadir node3/ init genesis.json
@@ -38,4 +38,8 @@ Run node3 -> port : 30323 , rpc port : 8563 , http port 8543
 
 
 
+solc --bin contracts/IdentityManagement.sol --abi contracts/IdentityManagement.sol -o build
+abigen --bin=build/IdentityManagement.bin --abi=build/IdentityManagement.abi --pkg=identityManagement --out=golang/IdentityManagement.go
 
+solc --bin contracts/SecureDataTransfer.sol --abi contracts/SecureDataTransfer.sol -o build
+abigen --bin=build/SecureDataTransfer.bin --abi=build/SecureDataTransfer.abi --pkg=secureDataTransfer --out=golang/SecureDataTransfer.go
